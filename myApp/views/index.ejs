@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>Welcome to <%= title %>
+  </p>
+  <hr>
+  <% messages.forEach((item)=> { %>
+    <p>
+      <%= item.text %>
+    </p>
+    <p>
+      <%= item.user %>
+    </p>
+    <p>
+      <%= item.time %>
+    </p>
+    <hr>
+    <% }) %>
+    <button onclick="enter()"> enter message</button>
+</body>
+<script>
+  function enter(){
+    window.location.href='/new'
+  }
+</script>
 </html>
